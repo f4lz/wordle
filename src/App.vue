@@ -4,8 +4,6 @@ import WordElement from './components/WordElement.vue';
 import UiGrid from './components/ui/UiGrid.vue';
 import { ref } from 'vue';
 
-// const russianAlphabetRegex = /[A-Za-z]/;
-
 const enteringWork: any = ref([])
 
 document.addEventListener('keydown', (e) => {
@@ -19,7 +17,6 @@ document.addEventListener('keydown', (e) => {
     } 
   }
   if ( e.key === 'Escape') {
-    alert("value")
     return
   }
 })
