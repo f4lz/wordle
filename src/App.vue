@@ -14,7 +14,7 @@ document.addEventListener('keydown', (e) => {
       if ( enteringWork.value.length < 6 ) {
         enteringWork.value.push(letter)
       } else {
-        console.log('текущее слово', enteringWork.value)
+        console.log(enteringWork.value)
       }
     } 
   }
@@ -26,7 +26,7 @@ document.addEventListener('keydown', (e) => {
 
 const alphabetList = [ 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я' ]
 
-const currentWord = "Данные".split('')
+// const currentWord = "Данные".split('')
 
 </script>
 
