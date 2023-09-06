@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply font-montserrat text-white text-lg;
+  }
+  h1 {
+    @apply text-2xl font-semibold; 
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-slate-900 max-w-xs transition-all duration-200 hover:border-white border border-transparent text-white rounded hover:shadow-xl px-3.5 py-1.5;
+  }
+}
