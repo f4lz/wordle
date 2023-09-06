@@ -4,19 +4,25 @@ import WordElement from './components/WordElement.vue';
 import UiGrid from './components/ui/UiGrid.vue';
 import { ref } from 'vue';
 
-const enteringWork: any = ref([])
+const letters: any = ref(['', '', '', '', '']) 
+const index = ref(0)
 
 document.addEventListener('keydown', (e) => {
-  for ( const [ index, letter ] of alphabetList.entries() ) {
+  for ( const letter of alphabetList ) {
     if ( e.key.toLowerCase() === letter.toLowerCase() ) {
-      if ( enteringWork.value.length < 6 ) {
-        enteringWork.value.push(letter)
-      } else {
-        console.log(enteringWork.value)
-      }
+      // if ( enteringWork.value.length < 6 ) {
+        letters.value[index.value] = `${letter}`
+        index.value++
+      // } else {
+      // }
     } 
   }
   if ( e.key === 'Escape') {
+    return
+  }
+  if ( e.key === 'Backspace') {
+    letters.value[index.value] = ''
+    index.value < 0  ? index.value = 0 : index.value--
     return
   }
 })
@@ -30,7 +36,7 @@ const alphabetList = [ 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И
 <template>
   <div class="bg-neutral-700 h-screen flex flex-col gap-y-6 justify-center items-center">
       <UiGrid>
-       <WordElement :class="`wordElement${index}`" v-for="(_, index) in 25" :key="index"/>
+       <WordElement v-for="(letter, index) in letters" :key="index">{{ letter }}</WordElement>
       </UiGrid>
       <div class="container flex flex-col gap-y-4 max-w-sm justify-center">
         <h1 class="text-center">Правила игры:</h1>
