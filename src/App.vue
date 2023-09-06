@@ -4,8 +4,6 @@ import WordElement from './components/WordElement.vue';
 import UiGrid from './components/ui/UiGrid.vue';
 import { ref } from 'vue';
 
-// const russianAlphabetRegex = /[A-Za-z]/;
-
 const enteringWork: any = ref([])
 
 document.addEventListener('keydown', (e) => {
@@ -14,19 +12,18 @@ document.addEventListener('keydown', (e) => {
       if ( enteringWork.value.length < 6 ) {
         enteringWork.value.push(letter)
       } else {
-        console.log('текущее слово', enteringWork.value)
+        console.log(enteringWork.value)
       }
     } 
   }
   if ( e.key === 'Escape') {
-    alert("value")
     return
   }
 })
 
 const alphabetList = [ 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я' ]
 
-const currentWord = "Данные".split('')
+// const currentWord = "Данные".split('')
 
 </script>
 
