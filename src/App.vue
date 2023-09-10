@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import RulesList from './components/RulesList.vue';
 import WordElement from './components/WordElement.vue';
-import UiGrid from './components/ui/UiGrid.vue';
+import WordElementWrapper from './components/WordElementWrapper.vue';
 import { ref } from 'vue';
 
-const letters: any = ref(['', '', '', '', '']) 
+const letters: any = ref([['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', '', '']]) 
 const index = ref(0)
 
 document.addEventListener('keydown', (e) => {
@@ -35,9 +35,12 @@ const alphabetList = [ 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И
 
 <template>
   <div class="bg-neutral-700 h-screen flex flex-col gap-y-6 justify-center items-center">
-      <UiGrid>
-       <WordElement v-for="(letter, index) in letters" :key="index">{{ letter }}</WordElement>
-      </UiGrid>
+      <div class="flex flex-col gap-3">
+       <WordElementWrapper v-for="(letter, index) in letters" :key="index">
+        <WordElement v-for="(letters, index) in letter" :key="index">
+        </WordElement>
+        </WordElementWrapper>
+      </div>
       <div class="container flex flex-col gap-y-4 max-w-sm justify-center">
         <h1 class="text-center">Правила игры:</h1>
         <p>
