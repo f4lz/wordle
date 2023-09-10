@@ -20,7 +20,7 @@ const colsNumberClasses = {
 <template>
   <div
     :class="[
-      'grid gap-4 xl:gap-2',
+      'grid gap-3',
       colsNumberClasses[colsNumber],
     ]"
   >

@@ -5,10 +5,10 @@
 
 @layer base {
   body {
-    @apply font-montserrat text-white text-lg;
+    @apply font-montserrat text-white text-sm md:text-base lg:text-lg;
   }
   h1 {
-    @apply text-2xl font-semibold; 
+    @apply text-base md:text-lg lg:text-2xl font-semibold; 
   }
 }
 
